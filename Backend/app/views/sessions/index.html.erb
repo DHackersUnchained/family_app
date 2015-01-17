@@ -1,22 +1,24 @@
-<h1>This is the index page.</h1>
-<% if user_signed_in? %>
-	<% if current_user.contact.nil? %>
-	  <li><%= link_to 'Edit Contact Information', new_contact_path %></li>
-	<% else %>
-	  <li><%= link_to 'Edit Contact Information', edit_contact_path(current_user.contact) %></li>
-	<% end %>
-<% end %>
-<% @users.each do |user| %>
-	<h3><%= user.email %></h3>
-	<% if user_signed_in? %>
-		<% if current_user != user %>
-			<% if current_user.following?(user) %>
-				<%= link_to "Unfollow", unfollow_user_path(user) %>
+<div id="main_content" class="container">
+	<h1>This is the index page.</h1>
+		<% if user_signed_in? %>
+			<% if current_user.contact.nil? %>
+			  <li><%= link_to 'Edit Contact Information', new_contact_path %></li>
 			<% else %>
-				<%= link_to "Follow", follow_user_path(user) %>
+			  <li><%= link_to 'Edit Contact Information', edit_contact_path(current_user.contact) %></li>
 			<% end %>
 		<% end %>
-	<% else %>
-		<%= link_to "Follow", new_user_session_path %>
-	<% end %>
-<% end %>
+		<% @users.each do |user| %>
+			<h3><%= user.email %></h3>
+			<% if user_signed_in? %>
+				<% if current_user != user %>
+					<% if current_user.following?(user) %>
+						<%= link_to "Unfollow", unfollow_user_path(user) %>
+					<% else %>
+						<%= link_to "Follow", follow_user_path(user) %>
+					<% end %>
+				<% end %>
+			<% else %>
+				<%= link_to "Follow", new_user_session_path %>
+			<% end %>
+		<% end %>
+</div>
