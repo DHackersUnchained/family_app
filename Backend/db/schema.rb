@@ -11,7 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117105638) do
+ActiveRecord::Schema.define(version: 20150117175501) do
+
+  create_table "contacts", force: true do |t|
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
+    t.string   "phone"
+    t.text     "address"
+    t.string   "email"
+    t.string   "birthday"
+    t.string   "hometown"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "contacts", ["user_id"], name: "index_contacts_on_user_id"
+
+  create_table "relationships", force: true do |t|
+    t.string   "type"
+    t.integer  "user2_id"
+    t.string   "user1_role"
+    t.string   "user2_role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,8 +52,10 @@ ActiveRecord::Schema.define(version: 20150117105638) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
 
+  add_index "users", ["ancestry"], name: "index_users_on_ancestry"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
