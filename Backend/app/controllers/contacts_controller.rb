@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
   end
 
   def new
-    @contact = current_user.contact.build
+    @contact = current_user.build_contact
     respond_with(@contact)
   end
 
@@ -21,7 +21,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = current_user.contact.build(contact_params)
+    @contact = current_user.build_contact(contact_params)
     @contact.save
     respond_with(@contact)
   end

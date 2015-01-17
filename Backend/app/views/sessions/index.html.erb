@@ -1,1 +1,11 @@
 <h1>This is the index page.</h1>
+<% if user_signed_in? %>
+	<% if current_user.contact.nil? %>
+	  <li><%= link_to 'Edit Contact Information', new_contact_path %></li>
+	<% else %>
+	  <li><%= link_to 'Edit Contact Information', edit_contact_path(current_user.contact) %></li>
+	<% end %>
+<% end %>
+<% @users.each do |user| %>
+	<h3><%= user.email %></h3>
+<% end %>
