@@ -1,60 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<% if !@contact.facebook.blank? %>
 <p>
   <strong>Facebook:</strong>
   <%= @contact.facebook %>
 </p>
-<% end %>
 
-<% if not @contact.twitter.blank? %>
 <p>
   <strong>Twitter:</strong>
   <%= @contact.twitter %>
 </p>
-<% end %>
 
-<% if !@contact.linkedin.blank? %>
 <p>
   <strong>Linkedin:</strong>
   <%= @contact.linkedin %>
 </p>
-<% end %>
 
-<% if !@contact.phone.blank? %>
 <p>
   <strong>Phone:</strong>
   <%= @contact.phone %>
 </p>
-<% end %>
 
-<% if !@contact.address.blank? %>
 <p>
   <strong>Address:</strong>
   <%= @contact.address %>
 </p>
-<% end %>
 
-<% if !@contact.email.blank? %>
 <p>
   <strong>Email:</strong>
   <%= @contact.email %>
 </p>
-<% end %>
 
-<% if !@contact.birthday.blank? %>
 <p>
   <strong>Birthday:</strong>
   <%= @contact.birthday %>
 </p>
-<% end %>
 
-<% if !@contact.hometown.blank? %>
 <p>
   <strong>Hometown:</strong>
   <%= @contact.hometown %>
 </p>
-<% end %>
 
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
