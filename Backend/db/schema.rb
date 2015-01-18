@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150117220221) do
+ActiveRecord::Schema.define(version: 20150118010446) do
 
   create_table "contacts", force: true do |t|
     t.string   "facebook"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150117220221) do
     t.boolean  "blocked",         default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
   end
 
   add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
@@ -68,6 +69,7 @@ ActiveRecord::Schema.define(version: 20150117220221) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "ancestry"
+    t.string   "name"
   end
 
   add_index "users", ["ancestry"], name: "index_users_on_ancestry"
