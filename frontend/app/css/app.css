@@ -9,11 +9,11 @@ body {
 	background-color: #FFD56D;
 	border-radius: 30px;
 	padding: 10px;
+	height: 200px;
+	width: 200px;
 }
 #userCard{
 	position: fixed;
-	height: 200px;
-	width: 200px;
 	top: 50%;
 	left: 50%;
 	margin-top: -100px;
@@ -21,14 +21,14 @@ body {
 }
 
 .nameOnCard{
-	border: 1px solid yellow; 
+	border: 1px solid white; 
 	height:15%; 
 	width: 100%; 
 	border-radius: 10px;
 	margin-bottom: 5px;
 }
 .profilePictureOnCard{
-	border: 1px solid yellow; 
+	border: 1px solid white; 
 	height: 40%; 
 	width: 40%; 
 	border-radius: 10px;

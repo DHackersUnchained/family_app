@@ -17,9 +17,12 @@
   </ul>-->
 
   <div class="container">
-    <div class="familyCard" id="userCard">
+    <div ng-repeat="phone in phones" class="familyCard" >
 
-      <div class = "nameOnCard"></div>
+      <div class = "nameOnCard">
+        <h5>{{phone.name}}</h5>  
+      </div>
+      
       <div class = "profilePictureOnCard"></div>
 
     </div>
