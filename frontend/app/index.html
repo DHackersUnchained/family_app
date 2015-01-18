@@ -1,34 +1,66 @@
 <!doctype html>
 <html lang="en" ng-app="familyApp">
-<head>
-  <meta charset="utf-8">
-  <title>Google Phone Gallery</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel="stylesheet" href="css/app.css">
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="js/controllers.js"></script>
-</head>
-<body ng-controller="PhoneListCtrl">
-  <!--<ul>
-    <li ng-repeat="phone in phones">
-      <span>{{phone.name}}</span>
-      <p>{{phone.snippet}}</p>
-    </li>
-  </ul>-->
 
-  <div class="container">
-    <div ng-repeat="phone in phones" class="familyCard" >
+  <head>
+    <meta charset="utf-8">
 
-      <div class = "nameOnCard">
-        <h5>{{phone.name}}</h5>  
+    <title>FamilyBook</title>
+
+    <!--linked documents-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/controllers.js"></script>
+
+  </head>
+
+  <body ng-controller="FamilyCardsCtrl">
+
+    <div class="container">
+
+      <!--CHILDREN-->
+      <div class="childrenCardsContainer">
+        <div ng-repeat="member in children" class="familyCard" id="childCard">
+
+          <div class = "nameLabelContainer">
+
+            <h5 class = "nameLabel">{{member.firstName}} {{member.lastName}}</h5> 
+
+          </div>
+          
+          <div class = "profilePictureOnCard"></div>
+
+        </div>
       </div>
-      
-      <div class = "profilePictureOnCard"></div>
 
+      <!--USER-->
+      <div class="partnersCardsContainer">
+        <div ng-repeat="user in users" id="userCard" class="familyCard">
+          <div class = "nameLabelContainer">
+            <h5 class = "nameLabel" >{{user.firstName}} {{user.lastName}}</h5>
+          </div> 
+          <div class = "profilePictureOnCard"></div>
+        </div>
+      </div>
+
+
+      <!--PARENTS-->
+      <div class="parentsCardsContainer">
+        <div ng-repeat="member in parents" class="familyCard" id = "parentCard">
+
+          <div class="nameLabelContainer">
+
+            <h5 class="nameLabel">{{member.firstName}} {{member.lastName}}</h5>
+
+          </div>
+
+          <div class="profilePictureOnCard"></div>
+
+        </div>
+      </div>
     </div>
-  </div>
 
 
 
-</body>
+  </body>
 </html>

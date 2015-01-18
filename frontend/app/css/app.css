@@ -1,8 +1,33 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 20px;
+  padding: 5px 5px 5px 5px;
   background-color: #F5B311;
+}
+
+.container{
+	padding: 0;
+	margin:0;
+}
+
+.childrenCardsContainer{
+	position: fixed;
+	float: right;
+	top: 50%;
+	margin-top: -310px;
+}
+
+.spousesCardsContainer{
+
+}
+
+.parentsCardsContainer{
+	margin-top:-205px;
+	top: 50%;
+	position: fixed;
+	right:5px;
+	margin-right: 0;
+	float:right;
 }
 
 .familyCard{
@@ -11,7 +36,12 @@ body {
 	padding: 10px;
 	height: 200px;
 	width: 200px;
+	margin-bottom: 5px;
 }
+#childCard{
+
+}
+
 #userCard{
 	position: fixed;
 	top: 50%;
@@ -20,18 +50,30 @@ body {
 	margin-left: -100px;
 }
 
-.nameOnCard{
-	border: 1px solid white; 
+#parentCard{
+}
+
+#spouseCard{
+
+}
+
+.nameLabelContainer{
+	border: 1px solid black; 
 	height:15%; 
 	width: 100%; 
 	border-radius: 10px;
 	margin-bottom: 5px;
+	padding: 5px;
 }
 .profilePictureOnCard{
-	border: 1px solid white; 
+	border: 1px solid black; 
 	height: 40%; 
 	width: 40%; 
 	border-radius: 10px;
-	margin-top
+}
+.nameLabel{
+	padding: 0;
+	margin: 0;
+	text-align: center;
 }
 
